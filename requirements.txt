@@ -1,0 +1,11 @@
+asgiref==3.7.2
+click==8.1.7
+Django==5.0
+Markdown==3.5.1
+Pillow==10.1.0
+pip==23.3.1
+setuptools==69.0.2
+sqlparse==0.4.4
+svgwrite==1.4.3
+Tree==0.2.4
+wheel==0.42.0
