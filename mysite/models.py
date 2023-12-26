@@ -1,7 +1,6 @@
 from django.db import models
 
 class Session(models.Model):
-    session_id = models.CharField(max_length=10, verbose_name='交易時段ID')
     name = models.CharField(max_length=5, verbose_name='交易時段')
     trade_time = models.CharField(max_length=20, default=' ', verbose_name='交易時間')
     def __str__(self):
@@ -32,5 +31,14 @@ class Strategy(models.Model):
     class Meta:
         ordering = ('-pub_date',)
     
+    def __str__(self):
+        return self.name
+
+class PPhoto(models.Model):
+    name = models.CharField(max_length=20, default='', verbose_name='圖片名稱')
+    strategy = models.ForeignKey(Strategy, on_delete=models.CASCADE, verbose_name='策略名稱')
+    url = models.URLField(default='', max_length=5000)
+    
+
     def __str__(self):
         return self.name
